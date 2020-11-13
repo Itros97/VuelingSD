@@ -1,6 +1,12 @@
 package clases;
 
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Usuario {
+	
+	@PrimaryKey
 	private String username;
 	private String nombre;
 	private String apellido;

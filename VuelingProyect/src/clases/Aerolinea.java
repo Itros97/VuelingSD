@@ -1,9 +1,16 @@
 package clases;
 
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Aerolinea {
+	
+	@PrimaryKey
 	private int id;
 	private String nombre;
 	
+
 	public Aerolinea(int id, String nombre) {
 		this.id = id;
 		this.nombre = nombre;

@@ -1,6 +1,12 @@
 package clases;
 
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Pago {
+	
+	@PrimaryKey
 	private int id_Pago;
 	private double importe;
 	
