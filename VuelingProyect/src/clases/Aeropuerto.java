@@ -5,9 +5,13 @@ public class Aeropuerto {
 	private String nombre;
 	
 	public Aeropuerto(int id_Aeropuerto, String nombre) {
-		super();
 		this.id_Aeropuerto = id_Aeropuerto;
 		this.nombre = nombre;
+	}
+	
+	public Aeropuerto() {
+		this.id_Aeropuerto = 0;
+		this.nombre = "";
 	}
 
 	public int getId_Aeropuerto() {
