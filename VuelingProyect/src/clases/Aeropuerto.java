@@ -1,6 +1,12 @@
 package clases;
 
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Aeropuerto {
+	
+	@PrimaryKey
 	private int id_Aeropuerto;
 	private String nombre;
 	

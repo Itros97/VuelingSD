@@ -1,6 +1,12 @@
 package clases;
 
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.PrimaryKey;
+
+@PersistenceCapable
 public class Reserva {
+	
+	@PrimaryKey
 	private int id_Reserva;
 	private int num_Plazas;
 	private Usuario[] pasajero;
