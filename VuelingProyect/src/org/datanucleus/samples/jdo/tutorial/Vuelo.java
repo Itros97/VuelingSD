@@ -1,4 +1,4 @@
-package clases;
+package org.datanucleus.samples.jdo.tutorial;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package clases;
+package org.datanucleus.samples.jdo.tutorial;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
@@ -7,12 +7,14 @@ import javax.jdo.annotations.PrimaryKey;
 public class Usuario {
 	
 	@PrimaryKey
+	private int id_usuario;
 	private String username;
 	private String nombre;
 	private String apellido;
 	private String email;
 	
-	public Usuario(String username, String nombre, String apellido, String email) {
+	public Usuario(int id_usuario,String username, String nombre, String apellido, String email) {
+		this.id_usuario = id_usuario;
 		this.username = username;
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -20,10 +22,18 @@ public class Usuario {
 	}
 	
 	public Usuario() {
+		this.id_usuario = 0;
 		this.username = "";
 		this.nombre = "";
 		this.apellido = "";
 		this.email = "";
+	}
+	public int getId_usuario() {
+		return id_usuario;
+	}
+
+	public void setId_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
 	}
 
 	public String getUsername() {

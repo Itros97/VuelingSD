@@ -1,4 +1,4 @@
-package clases;
+package org.datanucleus.samples.jdo.tutorial;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
@@ -10,12 +10,14 @@ public class Reserva {
 	private int id_Reserva;
 	private int num_Plazas;
 	private Usuario[] pasajero;
+	private double precio;
 	
-	public Reserva(int id_Reserva, int num_Plazas, Usuario[] pasajero) {
+	public Reserva(int id_Reserva, int num_Plazas, Usuario[] pasajero,double precio) {
 		super();
 		this.id_Reserva = id_Reserva;
 		this.num_Plazas = num_Plazas;
 		this.pasajero = pasajero;
+		this.precio = precio;
 	}
 	
 	public Reserva() {
@@ -23,6 +25,7 @@ public class Reserva {
 		this.id_Reserva = 0;
 		this.num_Plazas = 0;
 		this.pasajero = null;
+		this.precio = 0.0;
 	}
 
 	public int getId_Reserva() {
@@ -47,6 +50,16 @@ public class Reserva {
 
 	public void setPasajero(Usuario[] pasajero) {
 		this.pasajero = pasajero;
+	}
+	public int getPrecio() {
+		return id_Reserva;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	public void cambiarPrecio(int importe) {
+		this.precio = importe;
 	}
 	
 }
