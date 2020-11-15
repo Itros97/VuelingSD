@@ -58,8 +58,5 @@ public class Reserva {
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
-	public void cambiarPrecio(int importe) {
-		this.precio = importe;
-	}
 	
 }
