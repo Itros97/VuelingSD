@@ -12,10 +12,7 @@ public class Aeropuerto {
 
 	// NOTA: No es necesario que creéis constructores. Usad el constructor por
 	// defecto y los métodos SET.
-	public Aeropuerto(int id_Aeropuerto, String nombre) {
-		this.id_Aeropuerto = id_Aeropuerto;
-		this.nombre = nombre;
-	}
+	//SOLUCIONADO
 
 	public Aeropuerto() {
 		this.id_Aeropuerto = 0;

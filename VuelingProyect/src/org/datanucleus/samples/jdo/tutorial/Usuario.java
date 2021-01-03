@@ -8,7 +8,7 @@ public class Usuario {
 
 	@PrimaryKey
 	private int id_usuario;
-	private String username;
+	private static String username;
 	private String nombre;
 	private String apellido;
 	private String email;
@@ -42,7 +42,7 @@ public class Usuario {
 		this.id_usuario = id_usuario;
 	}
 
-	public String getUsername() {
+	public static String getUsername() {
 		return username;
 	}
 

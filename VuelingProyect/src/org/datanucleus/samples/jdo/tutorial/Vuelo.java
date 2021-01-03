@@ -14,19 +14,16 @@ public class Vuelo {
 	private double precio;
 	private Date fecha_Salida;
 	private Date fecha_Llegada;
+	private Reserva[] reservas;
+	private Aeropuerto[] aeropuertos;
 
 	// NOTA: Faltan los atributos para definir las relaciones con Aerolínea,
 	// Aeropuertos y la lista de Reservas
+	//SOLUCIONADO
 
 	// NOTA: No es necesario que creéis constructores. Usad el constructor por
 	// defecto y los métodos SET.
-	public Vuelo(int id_Vuelo, int plazas_libres, double precio, Date fecha_Salida, Date fecha_Llegada) {
-		this.id_Vuelo = id_Vuelo;
-		this.plazas_libres = plazas_libres;
-		this.precio = precio;
-		this.fecha_Salida = fecha_Salida;
-		this.fecha_Llegada = fecha_Llegada;
-	}
+	//SOLUCIONADO
 
 	public Vuelo() {
 		this.id_Vuelo = 0;
@@ -34,6 +31,24 @@ public class Vuelo {
 		this.precio = 0.0;
 		this.fecha_Salida = null;
 		this.fecha_Llegada = null;
+		this.reservas = null;
+		this.aeropuertos = null;
+	}
+
+	public Reserva[] getReservas() {
+		return reservas;
+	}
+
+	public void setReservas(Reserva[] reservas) {
+		this.reservas = reservas;
+	}
+
+	public Aeropuerto[] getAeropuertos() {
+		return aeropuertos;
+	}
+
+	public void setAeropuertos(Aeropuerto[] aeropuertos) {
+		this.aeropuertos = aeropuertos;
 	}
 
 	public int getId_Vuelo() {

@@ -4,25 +4,21 @@ import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
-public class Reserva {
+public class Reserva extends Usuario {
 
 	@PrimaryKey
 	private int id_Reserva;
 	private int num_Plazas;
 	private Usuario[] pasajero;
 	private double precio;
+	private int id_Vuelo;
 	
 	//NOTA: Falta la relación con el Vuelo y la lista de pasajeros debe ser únicamente sus nombres.w
+	
 
 	// NOTA: No es necesario que creéis constructores. Usad el constructor por
 	// defecto y los métodos SET.
-	public Reserva(int id_Reserva, int num_Plazas, Usuario[] pasajero, double precio) {
-		super();
-		this.id_Reserva = id_Reserva;
-		this.num_Plazas = num_Plazas;
-		this.pasajero = pasajero;
-		this.precio = precio;
-	}
+	//SOLUCIONADO
 
 	public Reserva() {
 		super();
@@ -30,6 +26,15 @@ public class Reserva {
 		this.num_Plazas = 0;
 		this.pasajero = null;
 		this.precio = 0.0;
+		this.id_Vuelo = 0;
+	}
+
+	public int getId_Vuelo() {
+		return id_Vuelo;
+	}
+
+	public void setId_Vuelo(int id_Vuelo) {
+		this.id_Vuelo = id_Vuelo;
 	}
 
 	public int getId_Reserva() {
@@ -49,7 +54,10 @@ public class Reserva {
 	}
 
 	public Usuario[] getPasajero() {
-		return pasajero;
+		
+		for (int i = 0; i < pasajero.length; i++) {
+			return Usuario.getUsername();
+		}
 	}
 
 	public void setPasajero(Usuario[] pasajero) {
