@@ -12,11 +12,7 @@ public class Pago {
 
 	// NOTA: No es necesario que creéis constructores. Usad el constructor por
 	// defecto y los métodos SET.
-	public Pago(int id_Pago, double importe) {
-		super();
-		this.id_Pago = id_Pago;
-		this.importe = importe;
-	}
+	//SOLUCIONADO
 
 	public Pago() {
 		super();
