@@ -7,14 +7,19 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Vuelo {
-	
+
 	@PrimaryKey
 	private int id_Vuelo;
 	private int plazas_libres;
 	private double precio;
 	private Date fecha_Salida;
 	private Date fecha_Llegada;
-	
+
+	// NOTA: Faltan los atributos para definir las relaciones con Aerolínea,
+	// Aeropuertos y la lista de Reservas
+
+	// NOTA: No es necesario que creéis constructores. Usad el constructor por
+	// defecto y los métodos SET.
 	public Vuelo(int id_Vuelo, int plazas_libres, double precio, Date fecha_Salida, Date fecha_Llegada) {
 		this.id_Vuelo = id_Vuelo;
 		this.plazas_libres = plazas_libres;
@@ -22,7 +27,7 @@ public class Vuelo {
 		this.fecha_Salida = fecha_Salida;
 		this.fecha_Llegada = fecha_Llegada;
 	}
-	
+
 	public Vuelo() {
 		this.id_Vuelo = 0;
 		this.plazas_libres = 0;
@@ -77,6 +82,4 @@ public class Vuelo {
 				+ ", fecha_Salida=" + fecha_Salida + ", fecha_Llegada=" + fecha_Llegada + "]";
 	}
 
-	
-	
 }

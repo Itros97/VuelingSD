@@ -71,7 +71,7 @@ public class Main {
 	
 //			    
 			    @SuppressWarnings("unchecked")
-				Query<Usuario> q = persistentManager.newQuery("SELECT FROM " + Usuario.class.getName() + " WHERE username = 'usuario1'");
+				Query<Usuario> q = persistentManager.newQuery("SELECT FROM " + Usuario.class.getName() + " WHERE username == 'usuario1'");
 			    
 			 
 			    for (Usuario c: q.executeList()) {
@@ -100,7 +100,7 @@ public class Main {
 				    Extent<Reserva> reservas = persistentManager.getExtent(Reserva.class);
 				    
 				    for (Reserva r : reservas) {
-				    	r.cambiarPrecio(999);
+				    	r.setPrecio(300);
 				    }
 		
 				    transaction.commit();
