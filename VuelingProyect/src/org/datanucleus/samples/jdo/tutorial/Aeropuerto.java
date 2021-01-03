@@ -5,16 +5,18 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Aeropuerto {
-	
+
 	@PrimaryKey
 	private int id_Aeropuerto;
 	private String nombre;
-	
+
+	// NOTA: No es necesario que creéis constructores. Usad el constructor por
+	// defecto y los métodos SET.
 	public Aeropuerto(int id_Aeropuerto, String nombre) {
 		this.id_Aeropuerto = id_Aeropuerto;
 		this.nombre = nombre;
 	}
-	
+
 	public Aeropuerto() {
 		this.id_Aeropuerto = 0;
 		this.nombre = "";
@@ -40,7 +42,5 @@ public class Aeropuerto {
 	public String toString() {
 		return "Aeropuerto [id_Aeropuerto=" + id_Aeropuerto + ", nombre=" + nombre + "]";
 	}
-	
-	
-	
+
 }

@@ -5,22 +5,27 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Usuario {
-	
+
 	@PrimaryKey
 	private int id_usuario;
 	private String username;
 	private String nombre;
 	private String apellido;
 	private String email;
-	
-	public Usuario(int id_usuario,String username, String nombre, String apellido, String email) {
+
+	// NOTA: Falta la lista de Reservas, el aeropuerto por defecto y el sistema de
+	// autorización
+
+	// NOTA: No es necesario que creéis constructores. Usad el constructor por
+	// defecto y los métodos SET.
+	public Usuario(int id_usuario, String username, String nombre, String apellido, String email) {
 		this.id_usuario = id_usuario;
 		this.username = username;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.email = email;
 	}
-	
+
 	public Usuario() {
 		this.id_usuario = 0;
 		this.username = "";
@@ -28,6 +33,7 @@ public class Usuario {
 		this.apellido = "";
 		this.email = "";
 	}
+
 	public int getId_usuario() {
 		return id_usuario;
 	}
@@ -73,6 +79,5 @@ public class Usuario {
 		return "Usuario [username=" + username + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
 				+ "]";
 	}
-	
-	
+
 }

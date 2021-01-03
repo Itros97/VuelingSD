@@ -5,17 +5,19 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Pago {
-	
+
 	@PrimaryKey
 	private int id_Pago;
 	private double importe;
-	
+
+	// NOTA: No es necesario que creéis constructores. Usad el constructor por
+	// defecto y los métodos SET.
 	public Pago(int id_Pago, double importe) {
 		super();
 		this.id_Pago = id_Pago;
 		this.importe = importe;
 	}
-	
+
 	public Pago() {
 		super();
 		this.id_Pago = 0;
@@ -37,8 +39,5 @@ public class Pago {
 	public void setImporte(double importe) {
 		this.importe = importe;
 	}
-	
-	
-	
-	
+
 }
