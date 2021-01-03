@@ -7,7 +7,6 @@ public class prueba {
 		Aerolinea a1 = new Aerolinea();
 		a1.setPago(true);
 		System.out.println(a1);
-		syso
 	}
 
 }

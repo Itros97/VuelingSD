@@ -53,12 +53,12 @@ public class Reserva extends Usuario {
 		this.num_Plazas = num_Plazas;
 	}
 
-	public Usuario[] getPasajero() {
+	/*public Usuario[] getPasajero() {
 		
 		for (int i = 0; i < pasajero.length; i++) {
 			return Usuario.getUsername();
 		}
-	}
+	}*/
 
 	public void setPasajero(Usuario[] pasajero) {
 		this.pasajero = pasajero;

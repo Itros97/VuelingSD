@@ -37,7 +37,7 @@ public class Main {
 			    Usuario u4 = new Usuario(4,"usuario4", "Leire", "Garcia", "leireGarcia@gmail.com");
 			    Usuario[] pasajeros = new Usuario[4];
 			    pasajeros[0] = u1; pasajeros[1] = u2; pasajeros[2] = u3; pasajeros[3] = u4;
-			    Pago pago = new Pago(1,150.52);
+			  /*  Pago pago = new Pago(1,150.52);
 			    Aeropuerto ap1 = new Aeropuerto(1,"Loiu");
 			    Aeropuerto ap2 = new Aeropuerto(2, "Barajas");
 			    Aerolinea al1 = new Aerolinea(1,"vueling");
@@ -47,7 +47,7 @@ public class Main {
 			    
 			    persistentManager.makePersistent(u1);
 			    persistentManager.makePersistent(pago);
-			    persistentManager.makePersistent(r1);
+			    persistentManager.makePersistent(r1);*/
 
 			
 			    
