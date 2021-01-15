@@ -23,7 +23,7 @@ public class AeropuertoAssembler {
 		AeropuertoDTO dto = new AeropuertoDTO();
 		
 		try {
-			dto.setId_Aeropuerto(aeropuerto.getId_Aeropuerto());
+			dto.setIdAeropuerto(aeropuerto.getIdAeropuerto());
 		} catch(Exception e) {
 			System.out.println(e);
 		}
