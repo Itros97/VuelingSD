@@ -3,7 +3,7 @@ package DTO;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.datanucleus.samples.jdo.tutorial.Pago;
+import Data.Pago;
 
 public class PagoAssembler {
 

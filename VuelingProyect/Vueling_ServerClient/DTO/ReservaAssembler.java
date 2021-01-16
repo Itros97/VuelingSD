@@ -3,7 +3,7 @@ package DTO;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.datanucleus.samples.jdo.tutorial.Reserva;
+import Data.Reserva;
 
 
 
@@ -27,7 +27,6 @@ public class ReservaAssembler {
 			dto.setIdReserva(reserva.getidReserva());
 			dto.setNumPlazas(reserva.getnumPlazas());
 			dto.setPago(PagoAssembler.getInstance().entityToDTO(reserva.getPrecio()));
-			dto.setVuelo(VueloAssembler.getInstance().entityToDTO(reserva.getVuelo()));
 		} catch(Exception e) {
 			System.out.println(e);
 		}

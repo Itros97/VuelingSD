@@ -6,7 +6,9 @@ import java.io.Serializable;
 public class UsuarioDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String id;
+	private int id;
+	private String username;
+	private String password;
 	private String nombre;
 	private String apellido;
 	private String email;
@@ -14,11 +16,27 @@ public class UsuarioDTO implements Serializable {
 	private String autorizacion;
 	
 	
-	public void setId(String id) {
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public void setId(int id) {
 		this.id = id;
 	}
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 	public String getNombre() {

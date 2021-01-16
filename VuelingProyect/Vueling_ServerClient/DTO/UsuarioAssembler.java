@@ -3,7 +3,9 @@ package DTO;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.datanucleus.samples.jdo.tutorial.Usuario;
+import Data.Usuario;
+import RMIData_Auth.UsuarioFacebookDTO;
+import DTO.UsuarioDTO;
 
 
 public class UsuarioAssembler {
@@ -19,14 +21,18 @@ public class UsuarioAssembler {
 		return instance;
 	}
 	
-	public UsuarioDTO entityToDTO(UserFacebookDTO user) {//Arreglar
+	public UsuarioDTO entityToDTO(UsuarioFacebookDTO user) {
 		UsuarioDTO dto = new UsuarioDTO();
 		
 		try {
 
-			dto.setApellido(user.getUsername());
-			dto.setEmail(user.getEmail());
-			dto.setId(user.getId());
+			 dto.setId(user.getidUsuario());
+			 dto.setUsername(user.getUsername());
+			 dto.setPassword(user.getPassword());
+			 dto.setNombre(user.getNombre());
+			 dto.setApellido(user.getApellido());
+			 dto.setEmail(user.getEmail());
+			 
 		} catch(Exception e) {
 			System.out.println(e);
 		}

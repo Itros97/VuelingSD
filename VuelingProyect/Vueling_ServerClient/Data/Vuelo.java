@@ -1,4 +1,4 @@
-package org.datanucleus.samples.jdo.tutorial;
+package Data;
 
 import java.util.Date;
 
@@ -8,22 +8,51 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Vuelo {
 
+	private Date fechaSalida;
+	private Date fechaLlegada;
+	private Reserva[] reservas;
+	private Aeropuerto aeropuertoSalida;
+	private Aeropuerto aeropuertoLlegada;
+	
 	@PrimaryKey
 	private int idVuelo;
 	private int plazasLibres;
 	private double precioVuelo;
-	private Date fechaSalida;
-	private Date fechaLlegada;
-	private Reserva[] reservas;
-	private Aeropuerto[] aeropuertos;
+	
+	public Vuelo(int idVuelo, int plazasLibres, double precioVuelo, Date fechaSalida, Date fechaLlegada,
+			Reserva[] reservas, Aeropuerto aeropuertoSalida, Aeropuerto aeropuertoLlegada) {
+		super();
+		this.idVuelo = idVuelo;
+		this.plazasLibres = plazasLibres;
+		this.precioVuelo = precioVuelo;
+		this.fechaSalida = fechaSalida;
+		this.fechaLlegada = fechaLlegada;
+		this.reservas = reservas;
+		this.aeropuertoSalida = aeropuertoSalida;
+		this.aeropuertoLlegada = aeropuertoLlegada;
+	}
+
+
 
 	// NOTA: Faltan los atributos para definir las relaciones con Aerolínea,
-	// Aeropuertos y la lista de Reservas
+	// aeropuertoSalida y la lista de Reservas
 	//SOLUCIONADO
 
 	// NOTA: No es necesario que creéis constructores. Usad el constructor por
 	// defecto y los métodos SET.
 	//SOLUCIONADO
+
+	public Aeropuerto getAeropuertoLlegada() {
+		return aeropuertoLlegada;
+	}
+
+
+
+	public void setAeropuertoLlegada(Aeropuerto aeropuertoLlegada) {
+		this.aeropuertoLlegada = aeropuertoLlegada;
+	}
+
+
 
 	public Vuelo() {
 		this.idVuelo = 0;
@@ -32,7 +61,7 @@ public class Vuelo {
 		this.fechaSalida = null;
 		this.fechaLlegada = null;
 		this.reservas = null;
-		this.aeropuertos = null;
+		this.aeropuertoSalida = null;
 	}
 
 	public Reserva[] getReservas() {
@@ -43,12 +72,12 @@ public class Vuelo {
 		this.reservas = reservas;
 	}
 
-	public Aeropuerto[] getAeropuertos() {
-		return aeropuertos;
+	public Aeropuerto getaeropuertoSalida() {
+		return aeropuertoSalida;
 	}
 
-	public void setAeropuertos(Aeropuerto[] aeropuertos) {
-		this.aeropuertos = aeropuertos;
+	public void setaeropuertoSalida(Aeropuerto aeropuertoSalida) {
+		this.aeropuertoSalida = aeropuertoSalida;
 	}
 
 	public int getidVuelo() {

@@ -1,4 +1,4 @@
-package org.datanucleus.samples.jdo.tutorial;
+package Data;
 
 
 import java.util.Date;

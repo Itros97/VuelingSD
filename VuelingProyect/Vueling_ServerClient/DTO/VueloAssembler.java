@@ -3,7 +3,7 @@ package DTO;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.datanucleus.samples.jdo.tutorial.Vuelo;
+import Data.Vuelo;
 
 
 
@@ -31,7 +31,8 @@ public class VueloAssembler {
 			dto.setFechaSalida(vuelo.getfechaLlegada());
 			dto.setFechaLlegada(vuelo.getfechaLlegada());
 			dto.setReservas(vuelo.getReservas());
-			dto.setAeropuertos(vuelo.getAeropuertos());
+			dto.setAeropuertoSalida(vuelo.getaeropuertoSalida());
+			dto.setAeropuertoLlegada(vuelo.getAeropuertoLlegada());
 		}catch(Exception e) {
 			System.out.println(e);
 		}

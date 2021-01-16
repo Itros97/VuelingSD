@@ -3,8 +3,8 @@ package DTO;
 import java.io.Serializable;
 import java.util.Date;
 
-import org.datanucleus.samples.jdo.tutorial.Aeropuerto;
-import org.datanucleus.samples.jdo.tutorial.Reserva;
+import Data.Aeropuerto;
+import Data.Reserva;
 
 public class VueloDTO implements Serializable{
 
@@ -16,7 +16,10 @@ public class VueloDTO implements Serializable{
 	private Date fechaSalida;
 	private Date fechaLlegada;
 	private Reserva[] reservas;
-	private Aeropuerto[] aeropuertos;
+	private Aeropuerto aeropuertoSalida;
+	private Aeropuerto aeropuertoLlegada;
+	
+	
 	public int getIdVuelo() {
 		return idVuelo;
 	}
@@ -53,17 +56,22 @@ public class VueloDTO implements Serializable{
 	public void setReservas(Reserva[] reservas) {
 		this.reservas = reservas;
 	}
-	public Aeropuerto[] getAeropuertos() {
-		return aeropuertos;
-	}
-	public void setAeropuertos(Aeropuerto[] aeropuertos) {
-		this.aeropuertos = aeropuertos;
-	}
+	
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-
-	
+	public Aeropuerto getAeropuertoSalida() {
+		return aeropuertoSalida;
+	}
+	public void setAeropuertoSalida(Aeropuerto aeropuertoSalida) {
+		this.aeropuertoSalida = aeropuertoSalida;
+	}
+	public Aeropuerto getAeropuertoLlegada() {
+		return aeropuertoLlegada;
+	}
+	public void setAeropuertoLlegada(Aeropuerto aeropuertoLlegada) {
+		this.aeropuertoLlegada = aeropuertoLlegada;
+	}
 	
 	
 }

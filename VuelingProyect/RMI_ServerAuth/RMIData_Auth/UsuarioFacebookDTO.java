@@ -1,37 +1,43 @@
-package org.datanucleus.samples.jdo.tutorial;
+package RMIData_Auth;
 
-import javax.jdo.annotations.PersistenceCapable;
-import javax.jdo.annotations.PrimaryKey;
+import java.io.Serializable;
 
-@PersistenceCapable
-public class Usuario {
+public class UsuarioFacebookDTO implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
-	@PrimaryKey
 	private int idUsuario;
 	private String username;
+	private String password;
 	private String nombre;
 	private String apellido;
 	private String email;
 
-	// NOTA: Falta la lista de Reservas, el aeropuerto por defecto y el sistema de
-	// autorización
-
-	// NOTA: No es necesario que creéis constructores. Usad el constructor por
-	// defecto y los métodos SET.
-	public Usuario(int idUsuario, String username, String nombre, String apellido, String email) {
+	
+	public UsuarioFacebookDTO(int idUsuario, String username, String password, String nombre, String apellido, String email) {
 		this.idUsuario = idUsuario;
+		this.password = password;
 		this.username = username;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.email = email;
 	}
 
-	public Usuario() {
+	public UsuarioFacebookDTO() {
 		this.idUsuario = 0;
 		this.username = "";
+		this.password = "";
 		this.nombre = "";
 		this.apellido = "";
 		this.email = "";
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public int getidUsuario() {
@@ -73,11 +79,4 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	@Override
-	public String toString() {
-		return "Usuario [username=" + username + ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email
-				+ "]";
-	}
-
 }
