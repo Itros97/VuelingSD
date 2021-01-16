@@ -3,7 +3,7 @@ package DTO;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.datanucleus.samples.jdo.tutorial.Aeropuerto;
+import Data.Aeropuerto;
 
 
 public class AeropuertoAssembler {
@@ -23,7 +23,7 @@ public class AeropuertoAssembler {
 		AeropuertoDTO dto = new AeropuertoDTO();
 		
 		try {
-			dto.setId_Aeropuerto(aeropuerto.getId_Aeropuerto());
+			dto.setIdAeropuerto(aeropuerto.getIdAeropuerto());
 		} catch(Exception e) {
 			System.out.println(e);
 		}

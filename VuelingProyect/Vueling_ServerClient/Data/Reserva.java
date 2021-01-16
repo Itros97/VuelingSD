@@ -1,4 +1,4 @@
-package org.datanucleus.samples.jdo.tutorial;
+package Data;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
@@ -10,8 +10,8 @@ public class Reserva extends Usuario {
 	private int idReserva;
 	private int numPlazas;
 	private Usuario[] pasajero;
-	private double precio;
-	private int id_Vuelo;
+	private Pago precio;
+	//private Vuelo vuelo; REVISAR
 	
 	//NOTA: Falta la relación con el Vuelo y la lista de pasajeros debe ser únicamente sus nombres.w
 	
@@ -25,17 +25,27 @@ public class Reserva extends Usuario {
 		this.idReserva = 0;
 		this.numPlazas = 0;
 		this.pasajero = null;
-		this.precio = 0.0;
-		this.id_Vuelo = 0;
+		this.precio = null;
+		//this.vuelo = null;
 	}
 
-	public int getId_Vuelo() {
-		return id_Vuelo;
+	public Reserva(int idUsuario, String username, String nombre, String apellido, String email, int idReserva,
+			int numPlazas, Usuario[] pasajero, Pago precio/*, Vuelo vuelo*/) {
+		super(idUsuario, username, nombre, apellido, email);
+		this.idReserva = idReserva;
+		this.numPlazas = numPlazas;
+		this.pasajero = pasajero;
+		this.precio = precio;
+		//this.vuelo = vuelo;
 	}
 
-	public void setId_Vuelo(int id_Vuelo) {
-		this.id_Vuelo = id_Vuelo;
+	/*public Vuelo getVuelo() {
+		return vuelo;
 	}
+
+	public void setVuelo(Vuelo vuelo) {
+		this.vuelo = vuelo;
+	}*/
 
 	public int getidReserva() {
 		return idReserva;
@@ -64,11 +74,11 @@ public class Reserva extends Usuario {
 		this.pasajero = pasajero;
 	}
 
-	public int getPrecio() {
-		return idReserva;
+	public Pago getPrecio() {
+		return precio;
 	}
 
-	public void setPrecio(double precio) {
+	public void setPrecio(Pago precio) {
 		this.precio = precio;
 	}
 

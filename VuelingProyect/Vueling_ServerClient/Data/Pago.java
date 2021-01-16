@@ -1,4 +1,4 @@
-package org.datanucleus.samples.jdo.tutorial;
+package Data;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
@@ -20,6 +20,12 @@ public class Pago {
 		this.importe = 0.0;
 	}
 
+	public Pago(int idPago, double importe) {
+		super();
+		this.idPago = idPago;
+		this.importe = importe;
+	}
+
 	public int getidPago() {
 		return idPago;
 	}
@@ -30,6 +36,11 @@ public class Pago {
 
 	public double getImporte() {
 		return importe;
+	}
+
+	@Override
+	public String toString() {
+		return "Pago [idPago=" + idPago + ", importe=" + importe + "]";
 	}
 
 	public void setImporte(double importe) {

@@ -1,4 +1,4 @@
-package org.datanucleus.samples.jdo.tutorial;
+package Data;
 
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.PrimaryKey;
@@ -17,6 +17,12 @@ public class Aeropuerto {
 	public Aeropuerto() {
 		this.idAeropuerto = 0;
 		this.nombreAeropuerto = "";
+	}
+
+	public Aeropuerto(int idAeropuerto, String nombreAeropuerto) {
+		super();
+		this.idAeropuerto = idAeropuerto;
+		this.nombreAeropuerto = nombreAeropuerto;
 	}
 
 	public int getIdAeropuerto() {
