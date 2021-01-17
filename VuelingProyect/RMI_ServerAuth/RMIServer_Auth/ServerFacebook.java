@@ -1,6 +1,7 @@
 package RMIServer_Auth;
 
 import java.rmi.Naming;
+import java.rmi.Remote;
 
 import RMIServer_Auth.IServerFacebookManager;
 import RMIServer_Auth.ServerFacebookManager;
@@ -21,7 +22,7 @@ public class ServerFacebook {
 
 		try {		
 			IServerFacebookManager objServer = new ServerFacebookManager();
-			Naming.rebind(name, objServer);
+			Naming.rebind(name, (Remote) objServer); //arreglar!!
 			System.out.println("* Server '" + name + "' active and waiting...");
 		} catch (Exception e) {
 			System.err.println("- Exception running the server: " + e.getMessage());

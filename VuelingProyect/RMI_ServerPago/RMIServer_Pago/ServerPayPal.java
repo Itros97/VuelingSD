@@ -19,7 +19,7 @@ public class ServerPayPal{
 		String name = "//" + args[0] + ":" + args[1] + "/" + args[2];
 
 		try {		
-			IServerPayPalManager objServer = new ServerPaypalManager();
+			IServerPayPalManager objServer = new ServerPayPalManager();
 			Naming.rebind(name, objServer);
 			System.out.println("* Server '" + name + "' active and waiting...");
 		} catch (Exception e) {

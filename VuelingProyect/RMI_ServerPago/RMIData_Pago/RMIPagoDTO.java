@@ -3,7 +3,7 @@ package RMIData_Pago;
 
 import java.io.Serializable;
 
-public class PagoDTO implements Serializable{
+public class RMIPagoDTO implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
