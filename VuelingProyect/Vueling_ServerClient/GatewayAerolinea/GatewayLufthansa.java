@@ -6,7 +6,7 @@ import java.util.List;
 
 import RMIData.VueloIberia;
 import RMIData.VueloIberiaDTO;
-import datos.VueloLufthansaDTO;
+import SocketData.VueloLufthansaDTO;
 import DTO.VueloDTO;
 import Remote.RemoteFacade;
 

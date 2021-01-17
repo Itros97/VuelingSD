@@ -71,13 +71,13 @@ public class EchoService extends Thread {
 		}
 	}
 	
-	public ArrayList<VueloLufthansaDTO> getVuelos(Aeropuerto destino, Aeropuerto origen){
+	public ArrayList<VueloLufthansaDTO> getVuelos(String destino, String origen){
 		
 		ArrayList<VueloLufthansaDTO> vuelosDTO = new ArrayList<VueloLufthansaDTO>();
 	
 		for (VueloLufthansa v: vuelos) {
 			
-			if (v.getaeropuertoSalida().equals(origen) && v.getAeropuertoLlegada().equals(destino)) {
+			if (v.getaeropuertoSalida().getnombreAeropuerto().equals(origen) && v.getAeropuertoLlegada().getnombreAeropuerto().equals(destino)) {
 				vuelosDTO.add(VueloLufthansaAssembler.getInstance().toDTO(v));
 			}
 		}
@@ -120,7 +120,7 @@ public class EchoService extends Thread {
 				for(VueloLufthansaDTO v : vuelos) {
 					n++;
 					//output+=("."+"Lufthansa " +v.getOrigen()+" - "+v.getDestino()+" "+v.getFecha()+" "+v.gethSalida()+" - " +v.gethLlegada()+" "+v.getPrecio()+"euro");
-					output+=("&"+"Lufthansa "+ v.getOrigen() +" - "+v.getDestino()+" "+v.getFecha()+" "+v.gethSalida()+" - "+v.gethLlegada()+"#"+v.getAsientosRestantes()+"#"+v.getPrecio());
+					output+=("&"+"Lufthansa "+ v.getAeropuertoSalida() +" - "+v.getAeropuertoLlegada()+" "+v.getplazasLibres()+" "+v.getfechaSalida()+" - "+v.getfechaLlegada()+ "" +v.getprecioVueloLufthansa());
 					
 					//this.out.writeUTF("Lufthansa " +v.getOrigen()+" - "+v.getDestino()+" "+v.getFecha()+" "+v.gethSalida()+" - " +v.gethLlegada()+" "+v.getPrecio()+"euro");//mejor toString
 				}

@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 
-import server.data.dto.VueloDTO;
+import DTO.VueloDTO;
 
 public class BusquedaController {
 	
@@ -30,11 +30,11 @@ public class BusquedaController {
 		int serverPort = 35600;
 		System.out.println("BUSCANDO...");
 		ArrayList<VueloDTO> vuelos = new ArrayList<VueloDTO>();
-		ArrayList<VueloDTO> vuelosRyanair = new ArrayList<VueloDTO>();
+		ArrayList<VueloDTO> vuelosLufthansa = new ArrayList<VueloDTO>();
 		
 		ArrayList<String> vuelosR = new ArrayList<String>();
 		
-		try (Socket tcpSocket = new Socket(serverIP, serverPort); //estaria mejor en el gatewayRyanair
+		try (Socket tcpSocket = new Socket(serverIP, serverPort); //estaria mejor en el gatewayLufthansa
 				
 		     DataInputStream in = new DataInputStream(tcpSocket.getInputStream());
 			 DataOutputStream out = new DataOutputStream(tcpSocket.getOutputStream())){
@@ -72,12 +72,12 @@ public class BusquedaController {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		
-			//vuelosRyanair = ServiceLocatorRMI.getInstance().getService().get
+			//vuelosLufthansa = ServiceLocatorRMI.getInstance().getService().get
 			
 		}
 		for(VueloDTO v: vuelos) {
 			//vv.listModel.addElement(v.getIdAerolinea()+" "+ v.getOrigen() +" - "+v.getDestino()+" "+v.getFecha()+" "+v.getHoraLlegada()+" - "+v.getHoraSalida()+"#"+v.getPlazasLibres()+"#"+v.getPrecio());
-			vuelosR.add(v.getIdAerolinea()+" "+ v.getOrigen() +" - "+v.getDestino()+" "+v.getFecha()+" "+v.getHoraLlegada()+" - "+v.getHoraSalida()+"#"+v.getPlazasLibres()+"#"+v.getPrecio());
+			vuelosR.add(v.getIdVuelo()+" "+ v.getAeropuertoSalida() +" - "+v.getAeropuertoLlegada()+" "+v.getFechaSalida()+" "+v.getFechaLlegada()+" - "+v.getReservas()+"#"+v.getPlazasLibres()+"#"+v.getPrecioVuelo());
 		}
 		
 		return vuelosR;
@@ -85,8 +85,6 @@ public class BusquedaController {
 	}
 
 	
-	
-	
-
 }
+	
 

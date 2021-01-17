@@ -1,7 +1,7 @@
 package utilities;
 import java.rmi.RemoteException;
 
-import server.data.dto.ClienteDTO;
+import DTO.UsuarioDTO;
 
 public class LogincController {
 	
@@ -17,7 +17,7 @@ public class LogincController {
 		
 		System.out.println("Probando login...");
 		
-		ClienteDTO u = null ;
+		UsuarioDTO u = null ;
 		try {
 			u = ServiceLocatorRMI.getInstance().getService().login(email, password);
 			

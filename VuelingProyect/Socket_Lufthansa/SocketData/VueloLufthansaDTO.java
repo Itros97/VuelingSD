@@ -88,7 +88,6 @@ public class VueloLufthansaDTO implements Serializable{
 	public void setfechaLlegada(Date fechaLlegada) {
 		this.fechaLlegada = fechaLlegada;
 	}
-
 	@Override
 	public String toString() {
 		return "VueloLufthansaDTO [idVueloLufthansa=" + idVueloLufthansa + ", plazasLibres=" + plazasLibres

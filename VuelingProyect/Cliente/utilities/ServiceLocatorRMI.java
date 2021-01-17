@@ -4,7 +4,7 @@ import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 
-import server.remote.IRemoteFacade;
+import Remote.IRemoteFacade;
 
 public class ServiceLocatorRMI {
 
