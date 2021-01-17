@@ -6,7 +6,7 @@ import java.rmi.RemoteException;
 import DTO.PagoDTO;
 import RMIServer_Pago.IServerPayPalManager;
 import RMIData_Pago.RMIPagoDTO;
-import server.remote.RMIServiceLocator;
+import Remote.RMIServiceLocator;
 
 
 public class GatewayPayPal implements IGatewayPayPal{

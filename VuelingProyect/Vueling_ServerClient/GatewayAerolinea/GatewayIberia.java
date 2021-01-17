@@ -8,7 +8,7 @@ import RMIData.VueloIberia;
 import RMIData.VueloIberiaDTO;
 import RMIServer.IServerIberiaManager;
 import DTO.VueloDTO;
-import server.remote.RMIServiceLocator;
+import Remote.RMIServiceLocator;
 
 public class GatewayIberia implements IAerolineaGateway{
 	
