@@ -6,6 +6,8 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Reserva extends Usuario {
 
+	private static int contador=0;
+	
 	@PrimaryKey
 	private int idReserva;
 	private int numPlazas;
@@ -22,17 +24,19 @@ public class Reserva extends Usuario {
 
 	public Reserva() {
 		super();
-		this.idReserva = 0;
+		contador++;
+		this.idReserva = contador;
 		this.numPlazas = 0;
 		this.pasajero = null;
 		this.precio = null;
 		//this.vuelo = null;
 	}
 
-	public Reserva(int idUsuario, String username, String nombre, String apellido, String email, int idReserva,
+	public Reserva(String username, String password,  String nombre, String apellido, String email,
 			int numPlazas, Usuario[] pasajero, Pago precio/*, Vuelo vuelo*/) {
-		super(idUsuario, username, nombre, apellido, email);
-		this.idReserva = idReserva;
+		super(username, password,  nombre, apellido, email);
+		contador++;
+		this.idReserva = contador;
 		this.numPlazas = numPlazas;
 		this.pasajero = pasajero;
 		this.precio = precio;
@@ -51,9 +55,6 @@ public class Reserva extends Usuario {
 		return idReserva;
 	}
 
-	public void setidReserva(int idReserva) {
-		this.idReserva = idReserva;
-	}
 
 	public int getnumPlazas() {
 		return numPlazas;

@@ -2,6 +2,8 @@ package RMIData_Auth;
 
 public class UsuarioFacebook {
 
+	private static int contador=0;
+	
 	private int idUsuario;
 	private String username;
 	private String password;
@@ -10,8 +12,9 @@ public class UsuarioFacebook {
 	private String email;
 
 	
-	public UsuarioFacebook(int idUsuario, String username, String password, String nombre, String apellido, String email) {
-		this.idUsuario = idUsuario;
+	public UsuarioFacebook(String username, String password, String nombre, String apellido, String email) {
+		contador++;
+		this.idUsuario = contador;
 		this.username = username;
 		this.password = password;
 		this.nombre = nombre;
@@ -20,7 +23,8 @@ public class UsuarioFacebook {
 	}
 
 	public UsuarioFacebook() {
-		this.idUsuario = 0;
+		contador++;
+		this.idUsuario = contador;
 		this.username = "";
 		this.password = "";
 		this.nombre = "";
@@ -39,11 +43,7 @@ public class UsuarioFacebook {
 	public int getidUsuario() {
 		return idUsuario;
 	}
-
-	public void setidUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
-
+	
 	public String getUsername() {
 		return username;
 	}

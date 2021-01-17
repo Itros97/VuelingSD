@@ -1,6 +1,7 @@
 package RMIData;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 
 import Data.Aeropuerto;
@@ -87,4 +88,14 @@ public class VueloIberiaDTO implements Serializable{
 	public void setfechaLlegada(Date fechaLlegada) {
 		this.fechaLlegada = fechaLlegada;
 	}
+
+	@Override
+	public String toString() {
+		return "VueloIberiaDTO [idVueloIberia=" + idVueloIberia + ", plazasLibres=" + plazasLibres
+				+ ", precioVueloIberia=" + precioVueloIberia + ", fechaSalida=" + fechaSalida + ", fechaLlegada="
+				+ fechaLlegada + ", reservas=" + Arrays.toString(reservas) + ", aeropuertoSalida=" + aeropuertoSalida
+				+ ", aeropuertoLlegada=" + aeropuertoLlegada + "]";
+	}
+	
+	
 }

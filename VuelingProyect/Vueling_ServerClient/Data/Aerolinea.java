@@ -6,6 +6,8 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Aerolinea {
 
+	private static int contador=0;
+	
 	//NOTA: Tenéis que diferenciar el pago con Tarjeta y PayPal
 	// SOLUCIONADO
 	@PrimaryKey
@@ -18,7 +20,8 @@ public class Aerolinea {
 	// SOLUCIONADO
 
 	public Aerolinea() {
-		this.idAerolinea = 0;
+		contador++;
+		this.idAerolinea = contador;
 		this.nombreAerolinea = "";
 		this.pago = false;
 	}
@@ -34,11 +37,6 @@ public class Aerolinea {
 	public int getIdAerolinea() {
 		return idAerolinea;
 	}
-
-	public void setIdAerolinea(int id) {
-		this.idAerolinea = id;
-	}
-
 	public String getNombreAerolinea() {
 		return nombreAerolinea;
 	}

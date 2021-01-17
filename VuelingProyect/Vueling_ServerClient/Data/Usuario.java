@@ -6,6 +6,8 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Usuario {
 
+	private static int contador=0;
+	
 	@PrimaryKey
 	private int idUsuario;
 	private String username;
@@ -19,8 +21,9 @@ public class Usuario {
 
 	// NOTA: No es necesario que creéis constructores. Usad el constructor por
 	// defecto y los métodos SET.
-	public Usuario(int idUsuario, String username, String password, String nombre, String apellido, String email) {
-		this.idUsuario = idUsuario;
+	public Usuario(String username, String password, String nombre, String apellido, String email) {
+		contador++;
+		this.idUsuario = contador;
 		this.username = username;
 		this.password = password;
 		this.nombre = nombre;
@@ -29,7 +32,8 @@ public class Usuario {
 	}
 
 	public Usuario() {
-		this.idUsuario = 0;
+		contador++;
+		this.idUsuario = contador;
 		this.username = "";
 		this.password = "";
 		this.nombre = "";
@@ -49,9 +53,6 @@ public class Usuario {
 		return idUsuario;
 	}
 
-	public void setidUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
-	}
 
 	public String getUsername() {
 		return username;
