@@ -57,7 +57,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	public ArrayList<VueloDTO> getVuelos2(String origen, String destino) throws RemoteException {
 		
 		ArrayList<VueloDTO> vuelos = new ArrayList<VueloDTO>();
-		vuelos = DataService.getInstance().getVuelos2(origen,destino);
+		vuelos = ReservaService.getInstance().getVuelos2(origen,destino);
 		return vuelos;
 	}
 	
@@ -65,7 +65,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		
 		RMIPagoDTO pago = null;
 		try {
-			pago = PaymentService.getInstance().realizarPago(email, password, importe);
+			pago = PagoService.getInstance().realizarPago(email, password, importe);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -78,7 +78,7 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	@Override
 	public void decAsientos(int i, int id) {
 		
-		DataService.getInstance().decAsientos(i, id);
+		ReservaService.getInstance().decAsientos(i, id);
 	}
 
 	
