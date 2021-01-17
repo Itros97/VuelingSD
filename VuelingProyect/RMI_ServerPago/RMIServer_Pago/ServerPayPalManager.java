@@ -6,15 +6,15 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 
 import RMIData_Pago.UserPayPal;
-import RMIData_Pago.PagoDTO;
+import RMIData_Pago.RMIPagoDTO;
 
-public class ServerPaypalManager extends UnicastRemoteObject implements IServerPayPalManager {
+public class ServerPayPalManager extends UnicastRemoteObject implements IServerPayPalManager {
 
 	private static final long serialVersionUID = 1L;
 	
 	private ArrayList<UserPayPal> users = new ArrayList<UserPayPal>();
 
-	protected ServerPaypalManager() throws RemoteException {
+	protected ServerPayPalManager() throws RemoteException {
 		super();
 		UserPayPal u1 = new UserPayPal("e1", "p1", 500);
 		UserPayPal u2 = new UserPayPal("e2", "p2", 10);
@@ -26,7 +26,7 @@ public class ServerPaypalManager extends UnicastRemoteObject implements IServerP
 	
 	}
 
-	public PagoDTO pagar(String pagoDestino, String pagoOrigen, String password, double importe) {
+	public RMIPagoDTO pagar(String pagoDestino, String pagoOrigen, String password, double importe) {
 		
 
 		UserPayPal remitente = getUser(pagoOrigen);
@@ -39,7 +39,7 @@ public class ServerPaypalManager extends UnicastRemoteObject implements IServerP
 			
 			remitente.setDinero(remitente.getDinero()- importe);
 			destinatario.setDinero(destinatario.getDinero()+ importe);
-			PagoDTO pagoDTO = new PagoDTO();
+			RMIPagoDTO pagoDTO = new RMIPagoDTO();
 			pagoDTO.setDestinatario(pagoDestino);
 			pagoDTO.setRemitente(pagoOrigen);
 			pagoDTO.setImporte(importe);

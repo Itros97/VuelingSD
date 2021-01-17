@@ -4,7 +4,7 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
 
-import server.remote.RemoteFacade;
+import Remote.RemoteFacade;
 
 public class AerolineaFactory {
 

@@ -31,10 +31,10 @@ public class Main {
 			    transaction.begin();
 			    
 			    
-			    Usuario u1 = new Usuario(1,"usuario1", "Ander", "Perez", "anderPerez@gmail.com");
-			    Usuario u2 = new Usuario(2,"usuario2", "Aitor", "Fernandez", "aitorFernandez@gmail.com");
-			    Usuario u3 = new Usuario(3,"usuario3", "Iker", "Lopez", "ikerLopez@gmail.com");
-			    Usuario u4 = new Usuario(4,"usuario4", "Leire", "Garcia", "leireGarcia@gmail.com");
+			    Usuario u1 = new Usuario("usuario1", "123", "Ander", "Perez", "anderPerez@gmail.com");
+			    Usuario u2 = new Usuario("usuario2", "456", "Aitor", "Fernandez", "aitorFernandez@gmail.com");
+			    Usuario u3 = new Usuario("usuario3", "789","Iker", "Lopez", "ikerLopez@gmail.com");
+			    Usuario u4 = new Usuario("usuario4", "012", "Leire", "Garcia", "leireGarcia@gmail.com");
 			    Usuario[] pasajeros = new Usuario[4];
 			    pasajeros[0] = u1; pasajeros[1] = u2; pasajeros[2] = u3; pasajeros[3] = u4;
 			  /*  Pago pago = new Pago(1,150.52);
@@ -100,7 +100,8 @@ public class Main {
 				    Extent<Reserva> reservas = persistentManager.getExtent(Reserva.class);
 				    
 				    for (Reserva r : reservas) {
-				    	r.setPrecio(300);
+				    	Pago p1 = new Pago(300);
+				    	r.setPrecio(p1);
 				    }
 		
 				    transaction.commit();
