@@ -12,6 +12,8 @@ import Data.Reserva;
 @PersistenceCapable
 public class VueloIberia {
 
+	private static int contador=0;
+	
 	private Date fechaSalida;
 	private Date fechaLlegada;
 	private Reserva[] reservas;
@@ -23,10 +25,11 @@ public class VueloIberia {
 	private int plazasLibres;
 	private double precioVueloIberia;
 	
-	public VueloIberia(int idVueloIberia, int plazasLibres, double precioVueloIberia, Date fechaSalida, Date fechaLlegada,
+	public VueloIberia(int plazasLibres, double precioVueloIberia, Date fechaSalida, Date fechaLlegada,
 			Reserva[] reservas, Aeropuerto aeropuertoSalida, Aeropuerto aeropuertoLlegada) {
 		super();
-		this.idVueloIberia = idVueloIberia;
+		contador++;
+		this.idVueloIberia = contador;
 		this.plazasLibres = plazasLibres;
 		this.precioVueloIberia = precioVueloIberia;
 		this.fechaSalida = fechaSalida;
@@ -36,15 +39,16 @@ public class VueloIberia {
 		this.aeropuertoLlegada = aeropuertoLlegada;
 	}
 
-
-
-	// NOTA: Faltan los atributos para definir las relaciones con Aerolínea,
-	// aeropuertoSalida y la lista de Reservas
-	//SOLUCIONADO
-
-	// NOTA: No es necesario que creéis constructores. Usad el constructor por
-	// defecto y los métodos SET.
-	//SOLUCIONADO
+	public VueloIberia() {
+		contador++;
+		this.idVueloIberia = contador;
+		this.plazasLibres = 0;
+		this.precioVueloIberia = 0.0;
+		this.fechaSalida = null;
+		this.fechaLlegada = null;
+		this.reservas = null;
+		this.aeropuertoSalida = null;
+	}
 
 	public Aeropuerto getAeropuertoLlegada() {
 		return aeropuertoLlegada;
@@ -54,18 +58,6 @@ public class VueloIberia {
 
 	public void setAeropuertoLlegada(Aeropuerto aeropuertoLlegada) {
 		this.aeropuertoLlegada = aeropuertoLlegada;
-	}
-
-
-
-	public VueloIberia() {
-		this.idVueloIberia = 0;
-		this.plazasLibres = 0;
-		this.precioVueloIberia = 0.0;
-		this.fechaSalida = null;
-		this.fechaLlegada = null;
-		this.reservas = null;
-		this.aeropuertoSalida = null;
 	}
 
 	public Reserva[] getReservas() {
@@ -86,10 +78,6 @@ public class VueloIberia {
 
 	public int getidVueloIberia() {
 		return idVueloIberia;
-	}
-
-	public void setidVueloIberia(int idVueloIberia) {
-		this.idVueloIberia = idVueloIberia;
 	}
 
 	public int getplazasLibres() {

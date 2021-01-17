@@ -6,6 +6,8 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Pago {
 
+	private static int contador=0;
+	
 	@PrimaryKey
 	private int idPago;
 	private double importe;
@@ -16,13 +18,15 @@ public class Pago {
 
 	public Pago() {
 		super();
-		this.idPago = 0;
+		contador++;
+		this.idPago = contador;
 		this.importe = 0.0;
 	}
 
-	public Pago(int idPago, double importe) {
+	public Pago(double importe) {
 		super();
-		this.idPago = idPago;
+		contador++;
+		this.idPago = contador;
 		this.importe = importe;
 	}
 
@@ -30,9 +34,7 @@ public class Pago {
 		return idPago;
 	}
 
-	public void setidPago(int idPago) {
-		this.idPago = idPago;
-	}
+
 
 	public double getImporte() {
 		return importe;

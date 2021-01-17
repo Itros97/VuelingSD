@@ -27,7 +27,6 @@ public class UsuarioFacebookAssembler {
 		UsuarioFacebookDTO uDTO = new UsuarioFacebookDTO();
 		
 		try {
-		 uDTO.setidUsuario(u.getidUsuario());
 		 uDTO.setUsername(u.getUsername());
 		 uDTO.setPassword(u.getPassword());
 		 uDTO.setNombre(u.getNombre());

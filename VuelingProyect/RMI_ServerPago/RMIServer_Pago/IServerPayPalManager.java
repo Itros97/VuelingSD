@@ -7,6 +7,5 @@ import RMIData_Pago.PagoDTO;
 import RMIData_Pago.UserPayPal;
 
 public interface IServerPayPalManager extends Remote {
-	//modificar!!!!
-	PagoDTO pagar(String ud, String ur, String password, double importe) throws RemoteException;
+	PagoDTO pagar(String destinatario, String remitente, String password, double importe) throws RemoteException;
 }

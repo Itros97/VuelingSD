@@ -8,6 +8,8 @@ import javax.jdo.annotations.PrimaryKey;
 @PersistenceCapable
 public class Vuelo {
 
+	private static int contador=0;
+	
 	private Date fechaSalida;
 	private Date fechaLlegada;
 	private Reserva[] reservas;
@@ -19,10 +21,19 @@ public class Vuelo {
 	private int plazasLibres;
 	private double precioVuelo;
 	
-	public Vuelo(int idVuelo, int plazasLibres, double precioVuelo, Date fechaSalida, Date fechaLlegada,
+	// NOTA: Faltan los atributos para definir las relaciones con Aerolínea,
+	// aeropuertoSalida y la lista de Reservas
+	//SOLUCIONADO
+
+	// NOTA: No es necesario que creéis constructores. Usad el constructor por
+	// defecto y los métodos SET.
+	//SOLUCIONADO
+	
+	public Vuelo(int plazasLibres, double precioVuelo, Date fechaSalida, Date fechaLlegada,
 			Reserva[] reservas, Aeropuerto aeropuertoSalida, Aeropuerto aeropuertoLlegada) {
 		super();
-		this.idVuelo = idVuelo;
+		contador++;
+		this.idVuelo = contador;
 		this.plazasLibres = plazasLibres;
 		this.precioVuelo = precioVuelo;
 		this.fechaSalida = fechaSalida;
@@ -32,15 +43,18 @@ public class Vuelo {
 		this.aeropuertoLlegada = aeropuertoLlegada;
 	}
 
+	public Vuelo() {
+			contador++;
+			this.idVuelo = contador;
+			this.plazasLibres = 0;
+			this.precioVuelo = 0.0;
+			this.fechaSalida = null;
+			this.fechaLlegada = null;
+			this.reservas = null;
+			this.aeropuertoSalida = null;
+	}
 
-
-	// NOTA: Faltan los atributos para definir las relaciones con Aerolínea,
-	// aeropuertoSalida y la lista de Reservas
-	//SOLUCIONADO
-
-	// NOTA: No es necesario que creéis constructores. Usad el constructor por
-	// defecto y los métodos SET.
-	//SOLUCIONADO
+	
 
 	public Aeropuerto getAeropuertoLlegada() {
 		return aeropuertoLlegada;
@@ -54,15 +68,7 @@ public class Vuelo {
 
 
 
-	public Vuelo() {
-		this.idVuelo = 0;
-		this.plazasLibres = 0;
-		this.precioVuelo = 0.0;
-		this.fechaSalida = null;
-		this.fechaLlegada = null;
-		this.reservas = null;
-		this.aeropuertoSalida = null;
-	}
+	
 
 	public Reserva[] getReservas() {
 		return reservas;
@@ -82,10 +88,6 @@ public class Vuelo {
 
 	public int getidVuelo() {
 		return idVuelo;
-	}
-
-	public void setidVuelo(int idVuelo) {
-		this.idVuelo = idVuelo;
 	}
 
 	public int getplazasLibres() {

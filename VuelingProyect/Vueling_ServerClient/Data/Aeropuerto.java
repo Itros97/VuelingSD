@@ -5,7 +5,9 @@ import javax.jdo.annotations.PrimaryKey;
 
 @PersistenceCapable
 public class Aeropuerto {
-
+	
+	private static int contador=0;
+	
 	@PrimaryKey
 	private int idAeropuerto;
 	private String nombreAeropuerto;
@@ -15,22 +17,20 @@ public class Aeropuerto {
 	//SOLUCIONADO
 
 	public Aeropuerto() {
-		this.idAeropuerto = 0;
+		contador++;
+		this.idAeropuerto = contador;
 		this.nombreAeropuerto = "";
 	}
 
-	public Aeropuerto(int idAeropuerto, String nombreAeropuerto) {
+	public Aeropuerto(String nombreAeropuerto) {
 		super();
-		this.idAeropuerto = idAeropuerto;
+		contador++;
+		this.idAeropuerto = contador;
 		this.nombreAeropuerto = nombreAeropuerto;
 	}
 
 	public int getIdAeropuerto() {
 		return idAeropuerto;
-	}
-
-	public void setIdAeropuerto(int idAeropuerto) {
-		this.idAeropuerto = idAeropuerto;
 	}
 
 	public String getnombreAeropuerto() {

@@ -21,10 +21,10 @@ public class ServerFacebookManager extends UnicastRemoteObject implements IServe
 	protected ServerFacebookManager() throws RemoteException {
 		super();
 		
-		UsuarioFacebook u1 = new UsuarioFacebook(5, "JokinG", "fsdfsaf", "Jokin", "Gamonal", "joking@gmail.com");
-		UsuarioFacebook u2 = new UsuarioFacebook(6, "RamonA", "fdfser", "Ramon", "Andres", "andre@gmail.com");
-		UsuarioFacebook u3 = new UsuarioFacebook(7, "Joseba07", "eufsdfu", "Joseba", "Lopez", "lolo@gmail.com");
-		UsuarioFacebook u4 = new UsuarioFacebook(8, "Ricc", "thyrjty", "Riccardo", "Gomez", "ricc@gmail.com");
+		UsuarioFacebook u1 = new UsuarioFacebook("JokinG", "fsdfsaf", "Jokin", "Gamonal", "joking@gmail.com");
+		UsuarioFacebook u2 = new UsuarioFacebook("RamonA", "fdfser", "Ramon", "Andres", "andre@gmail.com");
+		UsuarioFacebook u3 = new UsuarioFacebook("Joseba07", "eufsdfu", "Joseba", "Lopez", "lolo@gmail.com");
+		UsuarioFacebook u4 = new UsuarioFacebook("Ricc", "thyrjty", "Riccardo", "Gomez", "ricc@gmail.com");
 		
 		ul.add(u1);
 		ul.add(u2);

@@ -1,6 +1,7 @@
 package DTO;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Date;
 
 import Data.Aeropuerto;
@@ -72,6 +73,14 @@ public class VueloDTO implements Serializable{
 	public void setAeropuertoLlegada(Aeropuerto aeropuertoLlegada) {
 		this.aeropuertoLlegada = aeropuertoLlegada;
 	}
+	@Override
+	public String toString() {
+		return "VueloDTO [idVuelo=" + idVuelo + ", plazasLibres=" + plazasLibres + ", precioVuelo=" + precioVuelo
+				+ ", fechaSalida=" + fechaSalida + ", fechaLlegada=" + fechaLlegada + ", reservas="
+				+ Arrays.toString(reservas) + ", aeropuertoSalida=" + aeropuertoSalida + ", aeropuertoLlegada="
+				+ aeropuertoLlegada + "]";
+	}
+	
 	
 	
 }

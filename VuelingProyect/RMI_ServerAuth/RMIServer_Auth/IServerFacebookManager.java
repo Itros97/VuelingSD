@@ -1,5 +1,9 @@
 package RMIServer_Auth;
 
-public interface IServerFacebookManager {
+import java.rmi.RemoteException;
 
+import RMIData_Auth.UsuarioFacebookDTO;
+
+public interface IServerFacebookManager {
+	UsuarioFacebookDTO login(String login, String password) throws RemoteException;
 }

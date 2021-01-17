@@ -13,25 +13,6 @@ public class UsuarioFacebookDTO implements Serializable {
 	private String apellido;
 	private String email;
 
-	
-	public UsuarioFacebookDTO(int idUsuario, String username, String password, String nombre, String apellido, String email) {
-		this.idUsuario = idUsuario;
-		this.password = password;
-		this.username = username;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.email = email;
-	}
-
-	public UsuarioFacebookDTO() {
-		this.idUsuario = 0;
-		this.username = "";
-		this.password = "";
-		this.nombre = "";
-		this.apellido = "";
-		this.email = "";
-	}
-
 	public String getPassword() {
 		return password;
 	}
@@ -79,4 +60,13 @@ public class UsuarioFacebookDTO implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	@Override
+	public String toString() {
+		return "UsuarioFacebookDTO [idUsuario=" + idUsuario + ", username=" + username + ", password=" + password
+				+ ", nombre=" + nombre + ", apellido=" + apellido + ", email=" + email + "]";
+	}
+	
+	
+	
 }

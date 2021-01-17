@@ -16,9 +16,9 @@ public class ServerPaypalManager extends UnicastRemoteObject implements IServerP
 
 	protected ServerPaypalManager() throws RemoteException {
 		super();
-		UserPayPal u1 = new UserPayPal(1, "e1", "p1", 500);
-		UserPayPal u2 = new UserPayPal(2, "e2", "p2", 10);
-		UserPayPal u3 = new UserPayPal(3, "e3", "p3", 20);
+		UserPayPal u1 = new UserPayPal("e1", "p1", 500);
+		UserPayPal u2 = new UserPayPal("e2", "p2", 10);
+		UserPayPal u3 = new UserPayPal("e3", "p3", 20);
 		
 		users.add(u1);
 		users.add(u2);
@@ -26,25 +26,22 @@ public class ServerPaypalManager extends UnicastRemoteObject implements IServerP
 	
 	}
 
-	//hay que cambiar algo ya que los atributos son distintos !!
-	public PagoDTO pagar(String ud, String ur, String password, double importe) {
+	public PagoDTO pagar(String pagoDestino, String pagoOrigen, String password, double importe) {
 		
 
-		UserPayPal userRem = getUser(ur);
-		UserPayPal userDes = getUser(ud);
+		UserPayPal remitente = getUser(pagoOrigen);
+		UserPayPal destinatario = getUser(pagoDestino);
 	
 		
-		if(password.equals(userRem.getPassword()) && userDes!=null && importe<=userRem.getDinero()) {
+		if(password.equals(remitente.getPassword()) && destinatario!=null && importe<=remitente.getDinero()) {
 			
 			
 			
-			userRem.setDinero(userRem.getDinero()- importe);
-			userDes.setDinero(userDes.getDinero()+ importe);
+			remitente.setDinero(remitente.getDinero()- importe);
+			destinatario.setDinero(destinatario.getDinero()+ importe);
 			PagoDTO pagoDTO = new PagoDTO();
-			pagoDTO.setId("id");
-			pagoDTO.setDestinatario(ud);
-			pagoDTO.setRemitente(ur);
-			pagoDTO.setFecha("fecha");
+			pagoDTO.setDestinatario(pagoDestino);
+			pagoDTO.setRemitente(pagoOrigen);
 			pagoDTO.setImporte(importe);
 			
 			System.out.println("Transacción correcta");

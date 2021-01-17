@@ -8,14 +8,17 @@ public class UserPayPal implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
+	private static int contador=0;
+	
 	private int idUsuario;
 	private String email;
 	private String password;
 	private double dinero; //paypal permite enlazar tarjeta de credito o cuenta bancaria, pero para este ejemplo usaremos esta variable
 	
-	public UserPayPal(int idUsuario, String email, String password, double dinero) {
+	public UserPayPal(String email, String password, double dinero) {
 		super();
-		this.idUsuario = idUsuario;
+		contador++;
+		this.idUsuario = contador;
 		this.email = email;
 		this.password = password;
 		this.dinero = dinero;
@@ -23,7 +26,8 @@ public class UserPayPal implements Serializable{
 	
 	public UserPayPal() {
 		super();
-		this.idUsuario = 0;
+		contador++;
+		this.idUsuario = contador;
 		this.email = "";
 		this.password = "";
 		this.dinero = 0.0;
@@ -31,10 +35,6 @@ public class UserPayPal implements Serializable{
 
 	public int getIdUsuario() {
 		return idUsuario;
-	}
-
-	public void setIdUsuario(int idUsuario) {
-		this.idUsuario = idUsuario;
 	}
 
 	public String getEmail() {

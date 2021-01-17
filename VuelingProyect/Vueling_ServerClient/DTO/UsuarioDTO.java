@@ -69,6 +69,14 @@ public class UsuarioDTO implements Serializable {
 	public void setAutorizacion(String autorizacion) {
 		this.autorizacion = autorizacion;
 	}
+
+	@Override
+	public String toString() {
+		return "UsuarioDTO [id=" + id + ", username=" + username + ", password=" + password + ", nombre=" + nombre
+				+ ", apellido=" + apellido + ", email=" + email + ", aeropuerto=" + aeropuerto + ", autorizacion="
+				+ autorizacion + "]";
+	}
+	
 	
 
 }
