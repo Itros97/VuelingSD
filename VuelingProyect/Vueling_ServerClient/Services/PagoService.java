@@ -7,16 +7,16 @@ import RMIData_Pago.RMIPagoDTO;
 import PayPal.GatewayPayPal;
 
 
-public class PaymentService {
+public class PagoService {
 
-	private static PaymentService instance;
+	private static PagoService instance;
 
-	private PaymentService() {
+	private PagoService() {
 	}
 
-	public static PaymentService getInstance() {
+	public static PagoService getInstance() {
 		if (instance == null) {
-			instance = new PaymentService();
+			instance = new PagoService();
 		}
 
 		return instance;
