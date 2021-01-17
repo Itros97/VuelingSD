@@ -8,7 +8,7 @@ import Remote.RemoteFacade;
 
 public class AerolineaFactory {
 
-	private IAerolineaGateway gatewayRyanAir;
+	private IAerolineaGateway gatewayLufthansa;
 	private IAerolineaGateway gatewayIberia;
 
 	private static AerolineaFactory instance;
@@ -32,11 +32,11 @@ public class AerolineaFactory {
 
 	public List<IAerolineaGateway> crearGatewaysAerolinea(String[] args) {
 		try {
-			this.gatewayRyanAir = new GatewayRyanAir();
+			this.gatewayLufthansa = new GatewayLufthansa();
 			this.gatewayIberia = new GatewayIberia(args);
 			
 			
-			this.listaGatewaysAerolineas.add(this.gatewayRyanAir);
+			this.listaGatewaysAerolineas.add(this.gatewayLufthansa);
 			
 			this.listaGatewaysAerolineas.add(this.gatewayIberia);
 
@@ -57,8 +57,8 @@ public class AerolineaFactory {
 		this.listaGatewaysAerolineas = listaGatewaysAerolineas;
 	}
 
-	public IAerolineaGateway getGatewayRyanAir() {
-		return this.gatewayRyanAir;
+	public IAerolineaGateway getGatewayLufthansa() {
+		return this.gatewayLufthansa;
 	}
 
 	public IAerolineaGateway getGatewayIberia() {

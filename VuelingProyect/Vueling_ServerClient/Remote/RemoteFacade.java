@@ -9,9 +9,9 @@ import DTO.UsuarioDTO;
 import DTO.VueloDTO;
 import Remote.IRemoteFacade;
 import Remote.RemoteFacade;
-import server.services.DataService;
-import server.services.LoginService;
-import server.services.PaymentService;
+import Services.ReservaService;
+import Services.LoginService;
+import Services.PagoService;
 
 public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 	private static final long serialVersionUID = 1L;
@@ -61,11 +61,11 @@ public class RemoteFacade extends UnicastRemoteObject implements IRemoteFacade {
 		return vuelos;
 	}
 	
-	public String realizarReserva2(String email, String password, double importe){
+	public String realizarReserva2(String destinatario, String remitente,  String password, double importe){
 		
 		RMIPagoDTO pago = null;
 		try {
-			pago = PagoService.getInstance().realizarPago(email, password, importe);
+			pago = PagoService.getInstance().realizarPago(destinatario, remitente,  password, importe);
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

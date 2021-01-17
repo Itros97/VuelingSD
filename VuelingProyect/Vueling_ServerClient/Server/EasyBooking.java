@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.rmi.Naming;
 import java.util.Arrays;
 
-import server.remote.IRemoteFacade;
-import server.remote.RemoteFacade;
+import Remote.IRemoteFacade;
+import Remote.RemoteFacade;
 
 public class EasyBooking {
 	public static void main(String[] args) throws SecurityException, IOException {	
